@@ -1,0 +1,64 @@
+/* Digital Twin UI · reference-inspired foundation tokens */
+:root {
+  color-scheme: dark;
+
+  /* Surfaces: keep the 3D scene visually dominant. */
+  --dt-canvas: #101115;
+  --dt-rail: #252832;
+  --dt-surface-1: #191b22;
+  --dt-surface-2: #22252e;
+  --dt-surface-3: #2b2f3a;
+  --dt-surface-glass: rgb(30 33 42 / 88%);
+  --dt-border: #343844;
+  --dt-divider: #2a2d36;
+
+  /* Text: reserve bright white for titles and important values. */
+  --dt-text-primary: #f3f4f8;
+  --dt-text-secondary: #b9bdca;
+  --dt-text-muted: #9298a9;
+  --dt-text-inverse: #101319;
+
+  /* Room identity. These colors encode area, not health or alarm state. */
+  --dt-room-showroom: #6488ff;
+  --dt-room-isolation: #b773f1;
+  --dt-room-mother-baby: #5bd3a8;
+  --dt-room-dining: #ff9a65;
+  --dt-room-neutral: #aab2c9;
+
+  /* System state has its own vocabulary, independent of room colors. */
+  --dt-status-normal: #60d5b0;
+  --dt-status-attention: #f1bc66;
+  --dt-status-critical: #f16c92;
+  --dt-status-offline: #a0a5b3;
+  --dt-action: #6d8dff;
+  --dt-focus: #9db1ff;
+
+  --dt-font: Inter, "Segoe UI", Arial, sans-serif;
+  --dt-text-xs: 0.6875rem;
+  --dt-text-sm: 0.75rem;
+  --dt-text-base: 0.875rem;
+  --dt-text-lg: 1.125rem;
+  --dt-text-xl: 1.5rem;
+  --dt-text-display: clamp(2rem, 4vw, 3.5rem);
+
+  --dt-space-1: 0.25rem;
+  --dt-space-2: 0.5rem;
+  --dt-space-3: 0.75rem;
+  --dt-space-4: 1rem;
+  --dt-space-5: 1.5rem;
+  --dt-space-6: 2rem;
+  --dt-space-7: 3rem;
+  --dt-space-8: 4rem;
+
+  --dt-radius-sm: 0.375rem;
+  --dt-radius-md: 0.625rem;
+  --dt-radius-lg: 1rem;
+  --dt-radius-pill: 999px;
+  --dt-shadow-panel: 0 18px 48px rgb(0 0 0 / 28%);
+  --dt-shadow-glow: 0 0 0 6px rgb(109 141 255 / 12%);
+  --dt-rail-width: 4.5rem;
+  --dt-panel-width: 18rem;
+  --dt-topbar-height: 4.5rem;
+  --dt-ease: cubic-bezier(.2, .7, .2, 1);
+  --dt-duration-fast: 160ms;
+}

@@ -1,0 +1,54 @@
+/* Smart City Digital Twin · foundation tokens */
+:root {
+  color-scheme: dark;
+
+  --sc-bg: #111a28;
+  --sc-scene: #172235;
+  --sc-header: #1b2535;
+  --sc-panel: rgb(23 34 50 / 91%);
+  --sc-panel-solid: #1b293c;
+  --sc-panel-raised: #26354a;
+  --sc-stroke: #3a4a61;
+  --sc-grid: #34445b;
+
+  --sc-text: #f3f6fa;
+  --sc-text-secondary: #c6d0dd;
+  --sc-text-muted: #9eacbd;
+  --sc-text-inverse: #111a28;
+
+  --sc-accent: #f7b547;
+  --sc-accent-bright: #ffd06a;
+  --sc-teal: #55c9c6;
+  --sc-blue: #8faeff;
+  --sc-positive: #69d2b5;
+  --sc-negative: #f18b85;
+  --sc-neutral: #a9b4c3;
+  --sc-focus: #b6d3ff;
+
+  --sc-font: "Segoe UI", Inter, Arial, sans-serif;
+  --sc-size-xs: 0.6875rem;
+  --sc-size-sm: 0.75rem;
+  --sc-size-md: 0.875rem;
+  --sc-size-lg: 1.125rem;
+  --sc-size-xl: 1.5rem;
+  --sc-size-display: clamp(2.25rem, 4vw, 3.6rem);
+
+  --sc-space-1: 0.25rem;
+  --sc-space-2: 0.5rem;
+  --sc-space-3: 0.75rem;
+  --sc-space-4: 1rem;
+  --sc-space-5: 1.5rem;
+  --sc-space-6: 2rem;
+  --sc-space-7: 3rem;
+  --sc-space-8: 4rem;
+
+  --sc-radius-sm: 0.25rem;
+  --sc-radius-md: 0.5rem;
+  --sc-radius-lg: 0.875rem;
+  --sc-radius-pill: 999px;
+  --sc-shadow-panel: 0 18px 44px rgb(3 8 17 / 36%);
+  --sc-topbar-height: 4.5rem;
+  --sc-sidebar-width: 18.75rem;
+  --sc-ease: cubic-bezier(.2, .7, .2, 1);
+  --sc-duration: 160ms;
+}

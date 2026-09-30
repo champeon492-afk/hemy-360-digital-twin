@@ -1,0 +1,6 @@
+node_modules/
+dist/
+source/
+*.ifc
+!sample-model/three-storey-demo.ifc
+sample-model/fragment-items.json

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0c0b" />
+  <title>HEMY 360 · Digital Twin</title>
+</head>
+<body>
+<div class="app dt-ui sc-ui">
+  <div class="work-area">
+    <header class="topbar">
+      <div class="brand"><span class="brand-glyph" aria-hidden="true">◔</span><span><strong>HEMY <em>360</em></strong><small>DIGITAL TWIN</small></span></div>
+      <form class="ot-search global-search" id="global-search-form" role="search"><label class="ot-search__field" for="global-search"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="Search IFC assets or GUIDs" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="global-search-suggestions" /></label><button class="ot-search__submit" type="submit">Search</button><div id="global-search-suggestions" class="search-suggestions" role="listbox" aria-label="Matching IFC assets" hidden></div></form>
+      <div class="topbar-right"><span class="sc-status sc-status--sample">Sample data</span><span class="top-clock" id="clock"></span><button class="dt-button details-toggle" id="details-toggle" type="button" aria-expanded="false" aria-controls="inspector">Details</button><button class="dt-button dt-button--quiet" id="help-button" type="button" title="About this demo">About</button></div>
+    </header>
+    <div class="workspace">
+      <aside class="sidebar sc-panel ot-glass-card" aria-label="Workspace tools"><div id="panel-content"></div></aside>
+      <main class="stage" aria-label="3D model workspace">
+        <div id="viewer" aria-label="Interactive IFC building model"></div>
+        <div class="stage-top"><div class="scene-title"><span>IFC MODEL · SAMPLE</span></div><span class="stage-chip"><span class="stage-dot"></span>SYNTHETIC THREE-STOREY <span class="slash">/</span> IFC4</span><span class="stage-chip stage-mode" id="stage-mode">MODEL VIEW</span></div>
+        <nav class="sc-nav workspace-nav stage-workspace-nav" aria-label="Workspaces">
+          <button class="workspace-link" data-view="overview" aria-current="page" type="button">Overview</button>
+          <button class="workspace-link" data-view="spatial" type="button">Spatial</button>
+          <button class="workspace-link" data-view="telemetry" type="button">Telemetry</button>
+          <button class="workspace-link" data-view="analytics" type="button">Analytics</button>
+          <button class="workspace-link" data-view="simulation" type="button">Simulation</button>
+          <button class="workspace-link" data-view="controls" type="button">Controls</button>
+          <button class="workspace-link" data-view="integrations" type="button">Integrations</button>
+          <button class="workspace-link" data-view="governance" type="button">Governance</button>
+        </nav>
+        <div id="loading" class="loading"><div class="spinner"></div><strong>Preparing sample model</strong><span id="loading-message">Loading synthetic building model…</span></div>
+        <div class="stage-toolbar" aria-label="Model controls">
+          <button class="dt-button" id="fit-model" type="button" title="Fit model">Fit</button><button class="dt-button" id="top-view" type="button" title="Top view">Top</button><button class="dt-button" id="explode" type="button" aria-pressed="false" title="Separate model groups">Explode</button><button class="dt-button" id="section" type="button" aria-pressed="false" title="Toggle section cut">Section</button>
+          <select id="floor-select" class="dt-input floor-select" aria-label="IFC building level"><option value="all">All levels</option></select><button class="dt-button" id="mesh-overlay" type="button" aria-pressed="false" title="Show mesh edges">Mesh</button><button class="dt-button" id="vr-mode" type="button" title="VR availability">VR</button><button class="dt-button" id="ar-mode" type="button" title="AR availability">AR</button>
+        </div>
+        <div class="stage-hint">Drag to orbit · Right drag to pan · Scroll to zoom · Click an element</div><div class="map-overlay" id="map-overlay" hidden></div>
+      </main>
+      <aside class="inspector sc-panel ot-glass-card" id="inspector" aria-label="Selected asset and operations">
+        <div class="inspector-top"><span class="dt-eyebrow">LIVE CONTEXT</span><button class="dt-button dt-button--quiet" id="clear-selection" type="button">Clear</button></div><h2>Asset intelligence</h2>
+        <div id="selection-empty" class="empty-state"><span class="empty-icon">◇</span><strong>Select a building element</strong><p>Click the model or choose an asset in Spatial navigation.</p></div>
+        <div id="selection-detail" class="asset-detail dt-card dt-card--flat" hidden><span id="selected-type" class="dt-eyebrow"></span><h3 id="selected-name"></h3><dl><dt>IFC GUID</dt><dd id="selected-guid"></dd><dt>Sample status</dt><dd id="selected-status"></dd><dt>IFC building level</dt><dd id="selected-floor"></dd></dl><button class="dt-button" id="focus-selection" type="button">Focus asset</button></div>
+        <div class="inspector-section"><div class="section-heading"><span class="dt-eyebrow">OPERATIONS SNAPSHOT</span><span class="sample-mini">SIMULATED</span></div><div class="kpi-grid" id="kpi-grid"></div></div>
+        <div class="inspector-section"><div class="section-heading"><span class="dt-eyebrow">INCIDENTS</span><button class="text-button" data-go="telemetry" type="button">Open all ↗</button></div><div id="incident-preview"></div></div>
+        <p class="source-note">Model: synthetic three-storey IFC4 demo · Metrics: local sample generator. No Fabric or physical control connection.</p>
+      </aside>
+    </div>
+    <section class="asset-overview ontology-panel" aria-label="IFC relationship visualization">
+      <div class="asset-overview-head ontology-head"><div><h2>IFC relationships <span class="asset-count" id="ontology-summary">Loading…</span></h2></div><div class="ontology-controls" role="group" aria-label="Relationship view"><button id="ontology-spatial" type="button" aria-pressed="true">Spatial</button><button id="ontology-types" type="button" aria-pressed="false">Types</button><button id="ontology-reset" type="button" title="Reset relationship view">Reset ↺</button></div></div>
+      <div class="ontology-canvas" id="ontology-canvas" aria-label="Interactive IFC relationship graph"><svg id="ontology-links" aria-hidden="true"></svg><div id="ontology-nodes"></div><p class="ontology-caption" id="ontology-caption" aria-live="polite">Select a node to trace IFC relationships.</p><div class="ontology-pages" id="ontology-pages" aria-label="Browse all IFC graph nodes"></div></div>
+    </section>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div><dialog id="confirm-dialog" class="confirm-dialog"><form method="dialog"><span class="dt-eyebrow">SIMULATION ONLY</span><h2 id="confirm-title">Confirm action</h2><p id="confirm-message"></p><div class="dialog-actions"><button class="dt-button" value="cancel">Cancel</button><button class="dt-button dt-button--primary" value="confirm">Apply to demo</button></div></form></dialog>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* Dune Dweller · warm architectural glass system */
+:root {
+  color-scheme: light;
+  --dd-outer: #a6a4a8;
+  --dd-sand: #c9b7a2;
+  --dd-sand-deep: #927d67;
+  --dd-glass: rgb(248 244 236 / 79%);
+  --dd-glass-strong: rgb(250 247 242 / 91%);
+  --dd-glass-quiet: rgb(244 238 228 / 66%);
+  --dd-stroke: rgb(85 75 66 / 14%);
+  --dd-text: #242422;
+  --dd-text-secondary: #675f57;
+  --dd-text-muted: #857e76;
+  --dd-text-light: #fffaf4;
+  --dd-lemon: #ffec86;
+  --dd-lemon-soft: #fff5bf;
+  --dd-mint: #a8d9b8;
+  --dd-track: rgb(205 196 184 / 62%);
+  --dd-charcoal: #3d4349;
+  --dd-focus: #4b6f73;
+
+  --dd-font: "Segoe UI", Inter, Arial, sans-serif;
+  --dd-size-2xs: .625rem;
+  --dd-size-xs: .6875rem;
+  --dd-size-sm: .75rem;
+  --dd-size-md: .875rem;
+  --dd-size-lg: 1.125rem;
+  --dd-size-xl: 1.5rem;
+  --dd-size-display: clamp(1.75rem, 3vw, 3rem);
+  --dd-line-tight: 1.15;
+  --dd-line-body: 1.45;
+
+  --dd-space-1: .25rem;
+  --dd-space-2: .5rem;
+  --dd-space-3: .75rem;
+  --dd-space-4: 1rem;
+  --dd-space-5: 1.5rem;
+  --dd-space-6: 2rem;
+  --dd-space-7: 3rem;
+  --dd-radius-sm: .5rem;
+  --dd-radius-md: 1rem;
+  --dd-radius-card: 1.75rem;
+  --dd-radius-pill: 999px;
+  --dd-shadow: 0 16px 48px rgb(73 54 40 / 18%);
+  --dd-glass-blur: 18px;
+  --dd-ease: cubic-bezier(.2, .7, .2, 1);
+  --dd-duration: 180ms;
+}
