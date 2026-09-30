@@ -1,5 +1,7 @@
 # HEMY 360 sample digital twin viewer
 
+**[▶ Open the sample 3D viewer](https://champeon492-afk.github.io/hemy-360-digital-twin/)**
+
 This public demonstration uses a **synthetic** three-storey IFC4 building. The model is generated from code in this repository. It does not contain a real facility model, project coordinates, equipment inventory, or live operational data.
 
 The sample includes 158 renderable IFC elements in six IFC classes. It has one `IfcProject`, one `IfcSite`, one `IfcBuilding`, and three `IfcBuildingStorey` entities. Its elements use `IfcRelContainedInSpatialStructure` for storey containment and `IfcRelDefinesByType` for type relationships. The interactive graph is derived from those IFC relationships.
